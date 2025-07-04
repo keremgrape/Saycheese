@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Visit Bursa - Discover the Beauty</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/swiper/swiper-bundle.min.css"
+  />
+  <style>
+    /* Ek özel stiller */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9fafb;
+    }
+  </style>
+</head>
+<body class="text-gray-800">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="text-2xl font-bold text-blue-700">Visit Bursa</div>
+      <ul class="hidden md:flex space-x-6 font-medium">
+        <li><a href="#slider" class="hover:text-blue-500">Home</a></li>
+        <li><a href="#places" class="hover:text-blue-500">Places</a></li>
+        <li><a href="#info" class="hover:text-blue-500">Info</a></li>
+        <li><a href="#contact" class="hover:text-blue-500">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Slider -->
+  <section id="slider" class="max-w-7xl mx-auto mt-6">
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide relative">
+          <img
+            src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1400&q=80"
+            alt="Uludağ Mountain"
+            class="w-full h-96 object-cover rounded-lg"
+          />
+          <div class="absolute bottom-5 left-5 bg-black bg-opacity-50 p-4 rounded text-white font-semibold text-xl">
+            Uludağ Mountain
+          </div>
+        </div>
+        <div class="swiper-slide relative">
+          <img
+            src="https://images.unsplash.com/photo-1526483360610-fca9c0f9a98d?auto=format&fit=crop&w=1400&q=80"
+            alt="Grand Mosque (Ulu Cami)"
+            class="w-full h-96 object-cover rounded-lg"
+          />
+          <div class="absolute bottom-5 left-5 bg-black bg-opacity-50 p-4 rounded text-white font-semibold text-xl">
+            Grand Mosque (Ulu Cami)
+          </div>
+        </div>
+        <div class="swiper-slide relative">
+          <img
+            src="https://images.unsplash.com/photo-1508898578281-774ac4893a84?auto=format&fit=crop&w=1400&q=80"
+            alt="Cumalıkızık Village"
+            class="w-full h-96 object-cover rounded-lg"
+          />
+          <div class="absolute bottom-5 left-5 bg-black bg-opacity-50 p-4 rounded text-white font-semibold text-xl">
+            Cumalıkızık Village
+          </div>
+        </div>
+      </div>
+      <!-- Slider Controls -->
+      <div
+        class="swiper-button-next text-blue-700 hover:text-blue-900"
+      ></div>
+      <div
+        class="swiper-button-prev text-blue-700 hover:text-blue-900"
+      ></div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+
+  <!-- Places Section -->
+  <section
+    id="places"
+    class="max-w-7xl mx-auto mt-12 px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+  >
+    <div class="bg-white rounded-lg shadow p-6 hover:shadow-lg transition cursor-pointer">
+      <img
+        src="https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=400&q=60"
+        alt="Iskender Kebab"
+        class="rounded mb-4"
+      />
+      <h3 class="text-xl font-semibold mb-2">Iskender Kebab</h3>
+      <p>
+        The iconic Turkish dish originating from Bursa, made with thinly sliced lamb, tomato sauce, and yogurt.
+      </p>
+    </div>
+    <div class="bg-white rounded-lg shadow p-6 hover:shadow-lg transition cursor-pointer">
+      <img
+        src="https://images.unsplash.com/photo-1559056199-d08a9c6023d1?auto=format&fit=crop&w=400&q=60"
+        alt="Chestnut Candy"
+        class="rounded mb-4"
+      />
+      <h3 class="text-xl font-semibold mb-2">Chestnut Candy</h3>
+      <p>
+        A sweet treat made from the famous Bursa chestnuts, loved by locals and visitors alike.
+      </p>
+    </div>
+    <div class="bg-white rounded-lg shadow p-6 hover:shadow-lg transition cursor-pointer">
+      <img
+        src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=400&q=60"
+        alt="Cumalıkızık Village"
+        class="rounded mb-4"
+      />
+      <h3 class="text-xl font-semibold mb-2">Cumalıkızık Village</h3>
+      <p>
+        A charming village near Bursa famous for its well-preserved Ottoman houses and cobblestone streets.
+      </p>
+    </div>
+  </section>
+
+  <!-- Info Section -->
+  <section
+    id="info"
+    class="max-w-7xl mx-auto mt-16 px-6 bg-blue-50 rounded-lg p-8"
+  >
+    <h2 class="text-3xl font-bold mb-6 text-blue-700">Useful Information</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+      <div class="flex items-center space-x-4">
+        <svg
+          class="w-10 h-10 text-blue-600"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M3 10h18"></path>
+          <path d="M12 3v18"></path>
+        </svg>
+        <div>
+          <h3 class="font-semibold text-xl">Transportation</h3>
+          <p>Use BursaKart for easy access to buses and metro.</p>
+        </div>
+      </div>
+      <div class="flex items-center space-x-4">
+        <svg
+          class="w-10 h-10 text-blue-600"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M12 6v6l4 2"></path>
+        </svg>
+        <div>
+          <h3 class="font-semibold text-xl">Best Time to Visit</h3>
+          <p>Spring and fall offer the most comfortable weather.</p>
+        </div>
+      </div>
+      <div class="flex items-center space-x-4">
+        <svg
+          class="w-10 h-10 text-blue-600"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M12 2a10 10 0 0110 10 10 10 0 01-10 10"></path>
+          <path d="M2 12a10 10 0 0110-10"></path>
+        </svg>
+        <div>
+          <h3 class="font-semibold text-xl">Local Culture</h3>
+          <p>Respect local customs and enjoy the warm hospitality.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section
+    id="contact"
+    class="max-w-7xl mx-auto mt-16 px-6 p-8 bg-white rounded-lg shadow"
+  >
+    <h2 class="text-3xl font-bold mb-6 text-blue-700">Contact Us</h2>
+    <p>If you have any questions or need assistance, feel free to contact:</p>
+    <ul class="mt-4 space-y-2 text-blue-600">
+      <li>
+        <a href="https://wa.me/905xxxxxxxxx" target="_blank" class="underline hover:text-blue-900">Kerem Üzüm (WhatsApp)</a>
+      </li>
+      <li>
+        <a href="mailto:kerem@example.com" class="underline hover:text-blue-900">kerem@example.com</a>
+      </li>
+      <li>Phone: +90 5XX XXX XX XX</li>
+    </ul>
+  </section>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
