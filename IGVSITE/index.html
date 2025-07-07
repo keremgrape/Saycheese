@@ -1,145 +1,141 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Visit Bursa - Discover the Beauty</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          animation: {
-            'fade-in': 'fadeIn 2s ease-out',
-            'slide-up': 'slideUp 1.5s ease-out',
-          },
-          keyframes: {
-            fadeIn: {
-              '0%': { opacity: '0' },
-              '100%': { opacity: '1' }
-            },
-            slideUp: {
-              '0%': { opacity: '0', transform: 'translateY(20px)' },
-              '100%': { opacity: '1', transform: 'translateY(0)' }
-            }
-          }
-        }
-      }
-    }
-  </script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #f9fafb;
-    }
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Say Cheese | Bursa'yı Keşfedin</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body class="text-gray-800">
+<body>
 
-  <!-- Navbar -->
-  <nav class="bg-white shadow sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-      <div class="text-2xl font-bold text-blue-700">Visit Bursa</div>
-      <ul class="hidden md:flex space-x-6 font-medium">
-        <li><a href="#hero" class="hover:text-blue-500">Home</a></li>
-        <li><a href="#places" class="hover:text-blue-500">Places</a></li>
-        <li><a href="#info" class="hover:text-blue-500">Info</a></li>
-        <li><a href="#contact" class="hover:text-blue-500">Contact</a></li>
-      </ul>
+    <div id="preloader">
+        <div class="preloader-animation"></div>
     </div>
-  </nav>
 
-  <!-- Hero Section -->
-  <section id="hero" class="relative h-[90vh] bg-cover bg-center text-white" style="background-image: url('https://images.unsplash.com/photo-1521401830884-6c03c1c87ebb?auto=format&fit=crop&w=1400&q=80')">
-    <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center text-center px-6">
-      <div>
-        <h1 class="text-5xl sm:text-6xl font-bold mb-4 animate-fade-in">Welcome to Bursa</h1>
-        <p class="text-xl sm:text-2xl max-w-2xl mx-auto mb-6 animate-slide-up">Where history meets nature. Discover culture, taste, and adventure.</p>
-        <a href="#places" class="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-cyan-500 hover:to-blue-500 text-white px-6 py-3 rounded-full font-semibold text-lg shadow-lg transition animate-bounce">
-          Explore Now
-        </a>
-      </div>
-    </div>
-  </section>
+    <header class="main-header">
+        <nav class="navbar">
+            <a href="#" class="logo-container">
+                <img src="say-cheese-logo.png" alt="Say Cheese Logo" class="site-logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#ana-sayfa">Ana Sayfa</a></li> <li>
+                    <a href="#tarih">
+                        <span class="icon-left"><i class="fas fa-book"></i></span>
+                        Tarih <span class="icon-right"><i class="fas fa-book"></i></span>
+                    </a>
+                </li>
+                <li><a href="#dogal-guzellikler">Doğa</a></li> <li><a href="#lezzetler">Lezzetler</a></li> <li><a href="#galeri">Galeri</a></li> <li><a href="#iletisim">İletişim</a></li> </ul>
+            <div class="burger-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
 
-  <!-- Slider -->
-  <section class="max-w-7xl mx-auto mt-12 px-6">
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide relative">
-          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1400&q=80" alt="Uludağ" class="w-full h-96 object-cover rounded-lg" />
-          <div class="absolute bottom-5 left-5 bg-black bg-opacity-50 p-4 rounded text-white font-semibold text-xl">Uludağ Mountain</div>
+    <section id="ana-sayfa" class="hero-section">
+        <div class="hero-content">
+            <h1>Bursa: Yeşilin ve Tarihin Buluştuğu Şehir</h1>
+            <p>Osmanlı'nın ilk başkenti, doğal güzellikleri ve eşsiz lezzetleriyle sizi bekliyor.</p>
+            <div class="hero-buttons">
+                <button class="explore-btn">Keşfetmeye Başla</button>
+                <button class="spin-wheel-btn" id="spinWheelBtn">Şansını Döndür!</button> </div>
         </div>
-        <div class="swiper-slide relative">
-          <img src="https://images.unsplash.com/photo-1526483360610-fca9c0f9a98d?auto=format&fit=crop&w=1400&q=80" alt="Ulu Cami" class="w-full h-96 object-cover rounded-lg" />
-          <div class="absolute bottom-5 left-5 bg-black bg-opacity-50 p-4 rounded text-white font-semibold text-xl">Grand Mosque</div>
+        <div class="hero-bg-overlay"></div>
+    </section>
+
+    <div id="spinWheelModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Şansını Döndür ve Bursa'yı Keşfet!</h2>
+            <div class="wheel-container">
+                <canvas id="spinWheelCanvas" width="500" height="500"></canvas>
+                <button class="spin-button" id="spinButton">DÖNDÜR!</button>
+                <i class="fas fa-arrow-alt-down pointer-icon"></i> </div>
+            <p class="result-text" id="wheelResult"></p>
+            <div class="result-details" id="resultDetails">
+                </div>
         </div>
-        <div class="swiper-slide relative">
-          <img src="https://images.unsplash.com/photo-1508898578281-774ac4893a84?auto=format&fit=crop&w=1400&q=80" alt="Cumalıkızık" class="w-full h-96 object-cover rounded-lg" />
-          <div class="absolute bottom-5 left-5 bg-black bg-opacity-50 p-4 rounded text-white font-semibold text-xl">Cumalıkızık Village</div>
+    </div>
+
+
+    <section id="tarih" class="content-section">
+        <div class="container">
+            <h2>Köklü Bir Tarih</h2>
+            <p>Bursa, Osmanlı İmparatorluğu'nun ilk başkenti olarak zengin bir tarihi mirasa sahiptir. Ulu Cami, Yeşil Türbe, Koza Han gibi yapılar şehrin geçmişine ışık tutar.</p>
+            <div class="image-grid">
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+            </div>
         </div>
-      </div>
-      <div class="swiper-button-next text-blue-700"></div>
-      <div class="swiper-button-prev text-blue-700"></div>
-      <div class="swiper-pagination"></div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Places -->
-  <section id="places" class="max-w-7xl mx-auto mt-16 px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-    <div class="bg-white rounded-lg shadow-xl hover:shadow-2xl transition-transform transform hover:scale-105 p-6 cursor-pointer">
-      <img src="https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=400&q=60" alt="Iskender" class="rounded mb-4" />
-      <h3 class="text-xl font-semibold mb-2">Iskender Kebab</h3>
-      <p>The iconic Turkish dish with lamb, tomato sauce, and yogurt.</p>
-    </div>
-    <div class="bg-white rounded-lg shadow-xl hover:shadow-2xl transition-transform transform hover:scale-105 p-6 cursor-pointer">
-      <img src="https://images.unsplash.com/photo-1559056199-d08a9c6023d1?auto=format&fit=crop&w=400&q=60" alt="Kestane şekeri" class="rounded mb-4" />
-      <h3 class="text-xl font-semibold mb-2">Chestnut Candy</h3>
-      <p>Sweet delight made from the famous Bursa chestnuts.</p>
-    </div>
-    <div class="bg-white rounded-lg shadow-xl hover:shadow-2xl transition-transform transform hover:scale-105 p-6 cursor-pointer">
-      <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=400&q=60" alt="Cumalıkızık" class="rounded mb-4" />
-      <h3 class="text-xl font-semibold mb-2">Cumalıkızık</h3>
-      <p>Historic village with preserved Ottoman houses and streets.</p>
-    </div>
-  </section>
+    <section id="dogal-guzellikler" class="content-section grey-bg">
+        <div class="container">
+            <h2>Doğayla İç İçe</h2>
+            <p>Uludağ'dan Gölyazı'ya, şelalelerden kaplıcalara kadar Bursa, her mevsimde doğal güzellikleriyle büyüleyici bir şehirdir.</p>
+            <div class="image-grid">
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Info -->
-  <section id="info" class="max-w-7xl mx-auto mt-16 px-6 bg-blue-50 rounded-lg p-8">
-    <h2 class="text-3xl font-bold mb-6 text-blue-700">Useful Information</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
-      <div>
-        <h3 class="font-semibold text-xl">Transportation</h3>
-        <p>BursaKart gives easy access to buses and metro.</p>
-      </div>
-      <div>
-        <h3 class="font-semibold text-xl">Best Time to Visit</h3>
-        <p>Spring and fall offer the best weather.</p>
-      </div>
-      <div>
-        <h3 class="font-semibold text-xl">Local Culture</h3>
-        <p>Friendly locals, traditional bazaars and warm hospitality.</p>
-      </div>
-    </div>
-  </section>
+    <section id="lezzetler" class="content-section">
+        <div class="container">
+            <h2>Bursa'nın Eşsiz Lezzetleri</h2>
+            <p>İskender kebap, kestane şekeri, pideli köfte... Bursa mutfağı damaklarda iz bırakır.</p>
+            <div class="flavor-items">
+                <div class="flavor-item"></div>
+                <div class="flavor-item"></div>
+                <div class="flavor-item"></div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Contact -->
-  <section id="contact" class="max-w-7xl mx-auto mt-16 px-6 p-8 bg-white rounded-lg shadow">
-    <h2 class="text-3xl font-bold mb-6 text-blue-700">Contact</h2>
-    <p>If you have any questions, feel free to contact:</p>
-    <ul class="mt-4 space-y-2 text-blue-600">
-      <li><a href="https://wa.me/905xxxxxxxxx" class="underline">Kerem Üzüm (WhatsApp)</a></li>
-      <li><a href="mailto:kerem@example.com" class="underline">kerem@example.com</a></li>
-      <li>Phone: +90 5XX XXX XX XX</li>
-    </ul>
-  </section>
+    <section id="galeri" class="content-section grey-bg">
+        <div class="container">
+            <h2>Fotoğraf Galerisi</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+            </div>
+        </div>
+    </section>
 
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script src="script.js"></script>
+    <section id="iletisim" class="content-section contact-section">
+        <div class="container">
+            <h2>Bize Ulaşın</h2>
+            <p>Bursa hakkında merak ettikleriniz veya önerileriniz için bizimle iletişime geçin.</p>
+            <form class="contact-form">
+                <input type="text" placeholder="Adınız Soyadınız">
+                <input type="email" placeholder="E-posta Adresiniz">
+                <textarea placeholder="Mesajınız"></textarea>
+                <button type="submit">Gönder</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 Say Cheese | Bursa'yı Keşfet. Tüm Hakları Saklıdır.</p>
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">X (Twitter)</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
