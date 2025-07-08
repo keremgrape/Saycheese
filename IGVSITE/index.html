@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Say Cheese | Bursa'yı Keşfedin</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="photos/1.png">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Luckiest+Guy&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
 <body>
 
@@ -20,14 +21,24 @@
             <a href="#" class="logo-container">
                 <img src="say-cheese-logo.png" alt="Say Cheese Logo" class="site-logo">
             </a>
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="tr">TR</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
             <ul class="nav-links">
-                <li><a href="#ana-sayfa">Ana Sayfa</a></li> <li>
+                <li><a href="#ana-sayfa" data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</a></li>
+                <li>
                     <a href="#tarih">
                         <span class="icon-left"><i class="fas fa-book"></i></span>
-                        Tarih <span class="icon-right"><i class="fas fa-book"></i></span>
+                        <span class="nav-text" data-tr="Tarih" data-en="History">Tarih</span> <span class="icon-right"><i class="fas fa-book"></i></span>
                     </a>
                 </li>
-                <li><a href="#dogal-guzellikler">Doğa</a></li> <li><a href="#lezzetler">Lezzetler</a></li> <li><a href="#galeri">Galeri</a></li> <li><a href="#iletisim">İletişim</a></li> </ul>
+                <li><a href="#dogal-guzellikler" data-tr="Doğa" data-en="Nature">Doğa</a></li>
+                <li><a href="#harita" data-tr="Harita" data-en="Map">Harita</a></li>
+                <li><a href="#lezzetler" data-tr="Lezzetler" data-en="Flavors">Lezzetler</a></li>
+                <li><a href="#galeri" data-tr="Galeri" data-en="Gallery">Galeri</a></li>
+                <li><a href="#iletisim" data-tr="İletişim" data-en="Contact">İletişim</a></li>
+            </ul>
             <div class="burger-menu">
                 <div class="line1"></div>
                 <div class="line2"></div>
@@ -38,11 +49,12 @@
 
     <section id="ana-sayfa" class="hero-section">
         <div class="hero-content">
-            <h1>Bursa: Yeşilin ve Tarihin Buluştuğu Şehir</h1>
-            <p>Osmanlı'nın ilk başkenti, doğal güzellikleri ve eşsiz lezzetleriyle sizi bekliyor.</p>
+            <h1 data-tr="Bursa'nın Güzelliklerini Keşfet" data-en="Discover the Beauties of Bursa">Bursa'nın Güzelliklerini Keşfet</h1>
+            <p data-tr="Bir kültür, tarih ve doğa yolculuğuna hazır olun." data-en="Get ready for a journey through culture, history, and nature.">Bir kültür, tarih ve doğa yolculuğuna hazır olun.</p>
             <div class="hero-buttons">
-                <button class="explore-btn">Keşfetmeye Başla</button>
-                <button class="spin-wheel-btn" id="spinWheelBtn">Şansını Döndür!</button> </div>
+                <button class="explore-btn" data-tr="Keşfetmeye Başla" data-en="Start Exploring">Keşfetmeye Başla</button>
+                <button class="spin-wheel-btn" id="spinWheelBtn" data-tr="Şansını Döndür!" data-en="Spin the Wheel!">Şansını Döndür!</button>
+            </div>
         </div>
         <div class="hero-bg-overlay"></div>
     </section>
@@ -50,11 +62,12 @@
     <div id="spinWheelModal" class="modal">
         <div class="modal-content">
             <span class="close-button">&times;</span>
-            <h2>Şansını Döndür ve Bursa'yı Keşfet!</h2>
+            <h2 data-tr="Şansını Döndür ve Bursa'yı Keşfet!" data-en="Spin the Wheel and Discover Bursa!">Şansını Döndür ve Bursa'yı Keşfet!</h2>
             <div class="wheel-container">
                 <canvas id="spinWheelCanvas" width="500" height="500"></canvas>
-                <button class="spin-button" id="spinButton">DÖNDÜR!</button>
-                <i class="fas fa-arrow-alt-down pointer-icon"></i> </div>
+                <button class="spin-button" id="spinButton" data-tr="DÖNDÜR!" data-en="SPIN!">DÖNDÜR!</button>
+                <i class="fas fa-arrow-alt-down pointer-icon"></i>
+            </div>
             <p class="result-text" id="wheelResult"></p>
             <div class="result-details" id="resultDetails">
                 </div>
@@ -64,70 +77,78 @@
 
     <section id="tarih" class="content-section">
         <div class="container">
-            <h2>Köklü Bir Tarih</h2>
-            <p>Bursa, Osmanlı İmparatorluğu'nun ilk başkenti olarak zengin bir tarihi mirasa sahiptir. Ulu Cami, Yeşil Türbe, Koza Han gibi yapılar şehrin geçmişine ışık tutar.</p>
+            <h2 data-tr="Köklü Bir Tarih" data-en="A Deep-Rooted History">Köklü Bir Tarih</h2>
+            <p data-tr="Bursa, Osmanlı İmparatorluğu'nun ilk başkenti olarak zengin bir tarihi mirasa sahiptir. Ulu Cami, Yeşil Türbe, Koza Han gibi yapılar şehrin geçmişine ışık tutar." data-en="Bursa, as the first capital of the Ottoman Empire, has a rich historical heritage. Structures like Ulu Mosque, Green Tomb, and Koza Han shed light on the city's past.">Bursa, Osmanlı İmparatorluğu'nun ilk başkenti olarak zengin bir tarihi mirasa sahiptir. Ulu Cami, Yeşil Türbe, Koza Han gibi yapılar şehrin geçmişine ışık tutar.</p>
             <div class="image-grid">
-                <div class="grid-item"></div>
-                <div class="grid-item"></div>
-                <div class="grid-item"></div>
+                <div class="grid-item" style="background-image: url('photos/ulu-cami.jpg');"></div>
+                <div class="grid-item" style="background-image: url('photos/yesil-turbe.jpg');"></div>
+                <div class="grid-item" style="background-image: url('photos/koza-han.jpg');"></div>
             </div>
         </div>
     </section>
 
     <section id="dogal-guzellikler" class="content-section grey-bg">
         <div class="container">
-            <h2>Doğayla İç İçe</h2>
-            <p>Uludağ'dan Gölyazı'ya, şelalelerden kaplıcalara kadar Bursa, her mevsimde doğal güzellikleriyle büyüleyici bir şehirdir.</p>
+            <h2 data-tr="Doğayla İç İçe" data-en="Embraced by Nature">Doğayla İç İçe</h2>
+            <p data-tr="Uludağ'dan Gölyazı'ya, şelalelerden kaplıcalara kadar Bursa, her mevsimde doğal güzellikleriyle büyüleyici bir şehirdir." data-en="From Uludağ to Gölyazı, from waterfalls to thermal springs, Bursa is a captivating city with its natural beauties in every season.">Uludağ'dan Gölyazı'ya, şelalelerden kaplıcalara kadar Bursa, her mevsimde doğal güzellikleriyle büyüleyici bir şehirdir.</p>
             <div class="image-grid">
-                <div class="grid-item"></div>
-                <div class="grid-item"></div>
-                <div class="grid-item"></div>
+                <div class="grid-item" style="background-image: url('photos/uludag.jpg');"></div>
+                <div class="grid-item" style="background-image: url('photos/golyazi.jpg');"></div>
+                <div class="grid-item" style="background-image: url('photos/saitabat.jpg');"></div>
             </div>
+        </div>
+    </section>
+
+    <section id="harita" class="content-section">
+        <div class="container">
+            <h2 data-tr="Bursa Haritası" data-en="Bursa Map">Bursa Haritası</h2>
+            <p data-tr="Bursa'yı interaktif harita üzerinde keşfedin. Yakında önemli noktalar eklenecektir!" data-en="Explore Bursa on an interactive map. Key points will be added soon!">Bursa'yı interaktif harita üzerinde keşfedin. Yakında önemli noktalar eklenecektir!</p>
+            <div id="mapid"></div>
         </div>
     </section>
 
     <section id="lezzetler" class="content-section">
         <div class="container">
-            <h2>Bursa'nın Eşsiz Lezzetleri</h2>
-            <p>İskender kebap, kestane şekeri, pideli köfte... Bursa mutfağı damaklarda iz bırakır.</p>
+            <h2 data-tr="Bursa'nın Eşsiz Lezzetleri" data-en="Unique Flavors of Bursa">Bursa'nın Eşsiz Lezzetleri</h2>
+            <p data-tr="İskender kebap, kestane şekeri, pideli köfte... Bursa mutfağı damaklarda iz bırakır." data-en="İskender kebab, candied chestnuts, meatballs with pita... Bursa cuisine leaves an unforgettable taste.">İskender kebap, kestane şekeri, pideli köfte... Bursa mutfağı damaklarda iz bırakır.</p>
             <div class="flavor-items">
-                <div class="flavor-item"></div>
-                <div class="flavor-item"></div>
-                <div class="flavor-item"></div>
+                <div class="flavor-item" style="background-image: url('photos/iskender.jpg');"></div>
+                <div class="flavor-item" style="background-image: url('photos/kestane-sekeri.jpg');"></div>
+                <div class="flavor-item" style="background-image: url('photos/pideli-kofte.jpg');"></div>
             </div>
         </div>
     </section>
 
     <section id="galeri" class="content-section grey-bg">
         <div class="container">
-            <h2>Fotoğraf Galerisi</h2>
+            <h2 data-tr="Fotoğraf Galerisi" data-en="Photo Gallery">Fotoğraf Galerisi</h2>
             <div class="gallery-grid">
-                <div class="gallery-item"></div>
-                <div class="gallery-item"></div>
-                <div class="gallery-item"></div>
-                <div class="gallery-item"></div>
-                <div class="gallery-item"></div>
-                <div class="gallery-item"></div>
+                <div class="gallery-item" style="background-image: url('photos/galeri1.jpg');"></div>
+                <div class="gallery-item" style="background-image: url('photos/galeri2.jpg');"></div>
+                <div class="gallery-item" style="background-image: url('photos/galeri3.jpg');"></div>
+                <div class="gallery-item" style="background-image: url('photos/galeri4.jpg');"></div>
+                <div class="gallery-item" style="background-image: url('photos/galeri5.jpg');"></div>
+                <div class="gallery-item" style="background-image: url('photos/galeri6.jpg');"></div>
             </div>
         </div>
     </section>
 
     <section id="iletisim" class="content-section contact-section">
         <div class="container">
-            <h2>Bize Ulaşın</h2>
-            <p>Bursa hakkında merak ettikleriniz veya önerileriniz için bizimle iletişime geçin.</p>
+            <h2 data-tr="Bize Ulaşın" data-en="Contact Us">Bize Ulaşın</h2>
+            <p data-tr="Bursa hakkında merak ettikleriniz veya önerileriniz için bizimle iletişime geçin." data-en="Contact us for any questions or suggestions about Bursa.">Bursa hakkında merak ettikleriniz veya önerileriniz için bizimle iletişime geçin.</p>
             <form class="contact-form">
-                <input type="text" placeholder="Adınız Soyadınız">
-                <input type="email" placeholder="E-posta Adresiniz">
-                <textarea placeholder="Mesajınız"></textarea>
-                <button type="submit">Gönder</button>
+                <input type="text" placeholder="Adınız Soyadınız" data-tr="Adınız Soyadınız" data-en="Your Name Surname">
+                <input type="email" placeholder="E-posta Adresiniz" data-tr="E-posta Adresiniz" data-en="Your Email Address">
+                <textarea placeholder="Mesajınız" data-tr="Mesajınız" data-en="Your Message"></textarea>
+                <button type="submit" data-tr="Gönder" data-en="Send">Gönder</button>
             </form>
         </div>
     </section>
 
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2025 Say Cheese | Bursa'yı Keşfet. Tüm Hakları Saklıdır.</p>
+            <p data-tr="&copy; 2025 Say Cheese | Bursa'yı Keşfet. Tüm Hakları Saklıdır." data-en="&copy; 2025 Say Cheese | Discover Bursa. All Rights Reserved.">&copy; 2025 Say Cheese | Bursa'yı Keşfet. Tüm Hakları Saklıdır.</p>
             <div class="social-links">
                 <a href="#">Facebook</a>
                 <a href="#">Instagram</a>
@@ -136,6 +157,7 @@
         </div>
     </footer>
 
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
